@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flip-o</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="//use.fontawesome.com/releases/v5.5.0/js/all.js"
+            integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+            crossorigin="anonymous"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Verdana', sans-serif;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --grid-s: 8px;
+            --grid-base: 16px;
+            --grid-m: 24px;
+            --stroke: 1px;
+            --radius: 4px;
+            --color-primary_light: #fff2fc;
+            --color-primary: #e413d7;
+            --color-primary_dark: #770087;
+            --color-secondary_light: #e0fcff;
+            --color-secondary: #00c7dd;
+            --color-secondary_dark: #00606b;
+            --typography-style: normal;
+            --typography-size: var(--grid-base);
+            --typography-line_height: var(--grid-m);
+        }
+    </style>
+    <style>
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: row wrap;
+        }
+    </style>
+    <noscript>
+        To use this application your browser must have JavaScript enabled.
+    </noscript>
+
+</head>
+<body>
+<div class="container" id="app"></div>
+<script nomodule type="text/javascript">
+  function browserFeatureDetection() {
+    try {
+      Function('() => {};');
+      // @ts-ignore
+      document.head.createShadowRoot || document.head.attachShadow;
+      return true;
+    }
+    catch (exception) {
+      return false;
+    }
+  }
+
+  if (!browserFeatureDetection()) {
+    document.getElementById('app').innerHTML = '<h1>Please, upgrade your browser to a newer version.</h1>';
+  }
+</script>
+<script type="module" src="index.js"></script>
+</body>
+</html>
